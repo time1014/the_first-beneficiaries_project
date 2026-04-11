@@ -1,0 +1,8 @@
+npm init 
+npm install express
+npm install mysql2
+npm install dotenv
+npm install --save-dev nodemon
+
+
+network에서 payload와 preview의 결과를 통해 코드오류 위치 찾기
