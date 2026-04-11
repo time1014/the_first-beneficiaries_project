@@ -1,49 +1,46 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
-export const useUserStore = defineStore('user', {
-    state: () => ({
-        user_no: null,
-        role: '',
-        user_id: '',
-        user_name: '',
-        approval: 0,
-        institution: 0
-    }),
-    actions: {
-        setUser(user) {
-            this.user_no = user.user_no;
-            this.role = user.role;
-            this.user_id = user.user_id;
-            this.user_name = user.user_name;
-            this.approval = user.approval;
-            this.institution = user.institution_no;
+export const useUserStore = defineStore('user', () => {
+    const user_no = ref(null)
+    const role = ref('')
+    const user_id = ref('')
+    const user_name = ref('')
+    const approval = ref(0)
+    const institution = ref(0)
 
-            localStorage.setItem('user', JSON.stringify(user));
-        },
-
-        // 사용자 이름/권한 등 일부 정보만 갱신할 때 사용
-        updateUser(data) {
-            this.user_name = data.user_name;
-            this.role = data.role;
-
-            // localStorage도 같이 갱신해야 새로고침/재접속 시 반영됨
-            const savedUser = JSON.parse(localStorage.getItem('user')) || {};
-            savedUser.user_name = data.user_name;
-            savedUser.role = data.role;
-
-            localStorage.setItem('user', JSON.stringify(savedUser));
-        },
-
-        loadUser() {
-            const data = localStorage.getItem('user');
-            if (data) {
-                const user = JSON.parse(data);
-                this.setUser(user);
-            }
-        },
-        logout() {
-            this.$reset();
-            localStorage.removeItem('user');
-        }
+    function setUser(user) {
+        user_no.value = user.user_no
+        role.value = user.role
+        user_id.value = user.user_id
+        user_name.value = user.user_name
+        approval.value = user.approval
+        institution.value = user.institution_no
     }
-});
+
+    function updateUser(data) {
+        user_name.value = data.user_name
+        role.value = data.role
+    }
+
+    function logout() {
+        user_no.value = null
+        role.value = ''
+        user_id.value = ''
+        user_name.value = ''
+        approval.value = 0
+        institution.value = 0
+    }
+
+    return {
+        user_no,
+        role,
+        user_id,
+        user_name,
+        approval,
+        institution,
+        setUser,
+        updateUser,
+        logout
+    }
+})
