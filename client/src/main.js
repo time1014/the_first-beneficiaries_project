@@ -6,6 +6,7 @@ import MyPreset from '@/layout/custom';
 import PrimeVue from 'primevue/config';
 import ConfirmationService from 'primevue/confirmationservice';
 import ToastService from 'primevue/toastservice';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 import { createPinia } from 'pinia';
 import { useUserStore } from '@/stores/user';
@@ -15,6 +16,7 @@ import '@/assets/styles.scss';
 
 const app = createApp(App);
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate)
 
 app.use(router);
 app.use(pinia);
