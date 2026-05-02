@@ -48,17 +48,13 @@
 <img width="2559" height="1293" alt="image" src="https://github.com/user-attachments/assets/77750b03-ea47-4bf1-a582-c631eebcb712" />
 
 
-### 시스템 구성도
-![시스템구성도](./docs/system_flow.png)
-
-### 자료 흐름도
-![자료흐름도](./docs/data_flow.png)
+### 프로그램 흐름도
+<img width="1249" height="702" alt="image" src="https://github.com/user-attachments/assets/befbdda9-47ee-4ee5-aad6-993f8c73328e" />
 
 ### ERD
-![ERD](./docs/erd.png)
+<img width="1166" height="618" alt="image" src="https://github.com/user-attachments/assets/927186df-a881-4b56-b1ff-46bfa5d073e8" />
 
-> 위 이미지는 예시 경로입니다.  
-> 실제 이미지 파일명에 맞게 `./docs/...` 경로를 수정해서 사용하세요.
+
 
 ---
 
