@@ -45,7 +45,8 @@
 ## 프로젝트 미리보기
 
 ### 메인 화면
-![메인화면](./docs/main.png)
+<img width="2559" height="1293" alt="image" src="https://github.com/user-attachments/assets/77750b03-ea47-4bf1-a582-c631eebcb712" />
+
 
 ### 시스템 구성도
 ![시스템구성도](./docs/system_flow.png)
