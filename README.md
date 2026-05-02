@@ -151,6 +151,55 @@
 
 ---
 
+구현 파트
+## 로그인
+<img width="2557" height="1304" alt="image" src="https://github.com/user-attachments/assets/9b83e9d7-6ff7-432f-8f43-e0d42f118fd3" />
+
+- bcrypt의 compare 메소드를 활용해 단반향 암호화로 DB의 암호화 된 비밀번호와 자체 비교
+- 아이디 비밀번호 체크 후 로그인 성공시 피니아에 로그인 정보 저장
+
+## 페이지 권한 처리
+<img width="1047" height="481" alt="image" src="https://github.com/user-attachments/assets/e624e34d-5743-403a-8f46-46439fc1e788" />
+<img width="756" height="530" alt="image" src="https://github.com/user-attachments/assets/d02c5536-a2b7-44fb-804d-3a2148fa508a" />
+
+- 권한에 따라 접근 불가능한 페이지 접근시 접근을 막음
+- pinia의 role 값을 바탕으로 권한 확인
+
+## 승인대기 / 승인요청승인
+<img width="542" height="537" alt="image" src="https://github.com/user-attachments/assets/c84e8cae-2b5b-4099-a8ae-8ab1793b150b" />
+<img width="2559" height="1297" alt="image" src="https://github.com/user-attachments/assets/b8dc4a21-6433-495d-b014-e883900b6e83" />
+
+- 회원가입 후 로그인 시 승인대기 상태
+- 관리자의 승인 이후 부터 로그인 가능
+- 관리자는 본인이 소속한 기관에 회원가입한 사용자의 회원가입 승인 요청을 승인/반려할 수 있음
+
+
+## 마이페이지 (일반사용자)
+<img width="913" height="500" alt="image" src="https://github.com/user-attachments/assets/a59878b2-c835-4ff5-9917-d0a76f62220b" />
+
+- 일반사용자는 마이페이지에서 자신의 계정 정보를 조회할 수 있고 일부 계정 정보를 수정할 수 있음
+
+## 상담기록
+
+<img width="1099" height="531" alt="image" src="https://github.com/user-attachments/assets/9148ad05-d403-4ddb-b38f-e3cdb100acc6" />
+
+- 담당자는 지원대상자와의 상담기록을 등록할 수 있음
+- 등록시 상담날짜 , 제목 , 내용을 임시저장하고 불러올수 있음 (임시기록은 지원신청서와 작성자를 기준으로 저장)
+- 등록시 첨부파일을 여러건 등록할 수 있음
+- 상담기록을 수정할 수 있고 수정시에 수정 이력에서 수정자와 날짜 등의 정보를 조회할 수 있고 DB에서 수정 내용도 관리하고 있음
+- 삭제시 확인 메세지 출력
+- 수정은 담당자와 부담당자만 가능 / 삭제는 등록한 당사자만 가능
+- 관리자는 등록 / 수정 / 삭제 모두 불가능
+
+## 일반사용자 (조회 모달창)
+
+<img width="431" height="218" alt="image" src="https://github.com/user-attachments/assets/51f2e389-2817-4c86-9d00-7de7361c83e9" />
+<img width="418" height="185" alt="image" src="https://github.com/user-attachments/assets/953fb248-8ffd-4f8a-9710-c5b694083c6d" />
+
+- 일반사용자는 지원 과정의 결과를 메인페이지에서 보기 버튼을 통해 조회 가능
+- 지원 계획과 결과는 승인 + 종결된 결과만 확인 가능
+
+
 ## 기술 스택 시각화
 
 | 구분 | 사용 기술 |
